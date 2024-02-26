@@ -1,8 +1,25 @@
-# React + Vite
+AdTools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pending heaps more stuff.
+
+## at a glance info ##
+
+We're using Material UI with Emotion for styling. 
+Docs[https://mui.com/material-ui/getting-started/usage/] for material. 
+
+Remember that MUI is mobile first, and you handle growth by media queries. 
+
+
+Font: Inter is heading, Roboto is everything else. It's classic for a reason. 
+
+
+
+
+
+Colours: 
+TODO
+
+
+
