@@ -1,0 +1,19 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  .logo {
+    /* Style your logo here */
+  }
+  
+  .dropdown {
+    /* Style your dropdown here */
+  }
+  
+  .account-circle {
+    /* Style your account circle here */
+  }

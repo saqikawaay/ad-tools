@@ -17,7 +17,8 @@ function Login() {
 
     return (
         <div className="login-container">
-            <h2>Welcome to Adtools</h2>
+            <h2>Welcome to Ad Tools</h2>
+            <p>Please log in to continue</p>
             <form onSubmit={handleLogin} className="login-form">
                 <label>
                     Username:
