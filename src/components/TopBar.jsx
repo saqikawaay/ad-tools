@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './Topbar.css'; // Import the CSS file
+import './TopBar.css'; // Import the CSS file
 
 
-export default function Topbar() {
+export default function TopBar() {
     const [accounts, setAccounts] = useState([]);
 
 
-    useEffect(() => {  
-        //fetch the accounts from the server
-        fetchAccounts().then(setAccounts);
-    }, []);
+  
 
     return (
         <div className="topbar">
@@ -23,8 +20,3 @@ export default function Topbar() {
         </div>
     );
 }
-
-async function fetchAccounts() {
-    const response = await fetch('http://localhost:3000/accounts');
-    return await response.json();
-};

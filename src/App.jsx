@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import Login from './assets/Login';
+import { useState } from 'react';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import TopBar from './components/TopBar';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = (username, password) => {
-    // login logic would go here
-
-    console.log('Logging in', username);
-    setIsLoggedIn(true);
-  };
 
 
-  const handleLogout = () => {
-    // logout logic would go here
-    setIsLoggedIn(false);
-  };
 
+  // const handleLogout = () => {
+  //   // logout logic would go here
+  //   setIsLoggedIn(false);
+  // };
 
 
 
   return (
     <>
     {isLoggedIn ? (
-<App onLogout={handleLogout} />
-) : (
-<Login onLogin={handleLogin} />
-)}
-
-    
+      <>
+        <h1>AdVitals</h1>
+        <TopBar /><SideBar />
+        <Dashboard />
+      </>
+    ) : (
+      <Login />
+    )}
   </>
   )
 }
