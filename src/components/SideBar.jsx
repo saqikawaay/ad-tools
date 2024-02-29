@@ -3,7 +3,7 @@ import './SideBar.css';
 
 
 
-export default function SideBar() {
+function SideBar() {
     return (
         <div className="sidebar">
             <div className="sidebar-item">Item 1</div>
@@ -12,3 +12,5 @@ export default function SideBar() {
         </div>
     );
 }
+
+export default SideBar

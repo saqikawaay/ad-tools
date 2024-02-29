@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './TopBar.css'; // Import the CSS file
+import { Avatar } from '@mui/material';
 
-
-export default function TopBar() {
+function TopBar() {
     const [accounts, setAccounts] = useState([]);
 
 
@@ -16,7 +16,11 @@ export default function TopBar() {
                 <option value="option2">Option 2</option>
                 <option value="option3">Option 3</option>
             </select>
-            <div className="account-circle">Account Circle</div>
+            <div> 
+                <Avatar alt="user" src="userAvatar" />
+            </div>
         </div>
     );
 }
+
+export default TopBar

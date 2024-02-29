@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import SideBar from './components/SideBar';
 import TopBar from './components/TopBar';
 
+
+
+
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
 
 
@@ -21,8 +25,7 @@ function App() {
     {isLoggedIn ? (
       <>
         <h1>AdVitals</h1>
-        <TopBar /><SideBar />
-        <Dashboard />
+        <Dashboard /><SideBar /><TopBar />
       </>
     ) : (
       <Login />
