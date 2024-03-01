@@ -1,7 +1,6 @@
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { createClient } from '@supabase/supabase-js';
-import "./Login.css"
 
 const supabase = createClient(
     'https://xxaphohtmaresrxqctzi.supabase.co', 
