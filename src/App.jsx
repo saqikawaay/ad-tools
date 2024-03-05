@@ -8,43 +8,43 @@ import TopBar from './components/TopBar';
 import { Typography } from '@mui/material';
 import theme from './theme';
 import Layout from './Layout';
-import { checkSession, supabaseAuthListener } from './components/authClient';
+import { supabase } from './supabaseClient';
+
+
+
 
 function App() {
- const [isLoggedIn, setIsLoggedIn] = useState(false);
-
- useEffect(() => {
-  //check if there's a current session: 
-  const session = checkSession();
-  setIsLoggedIn(!!session);
-  //subscribe to session changes
-  const { data: listener } = supabaseAuthListener((event, session) => {
-  setIsLoggedIn(!!session);
-  });
-
-  return () => {
-    listener.unsubscribe();
-  };
-}, []);
+ const [session, setSession] = useState(null);
 
 
-
-
-
+   useEffect(() => {
+    const subscription = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (event === 'SIGNED_OUT') {
+          setSession(null)
+        } else if (session) {
+          setSession(session);
+        }
+      })
+    return () => {
+      subscription.unsubscribe;
+    }
+  }, [])
+ 
   return (
     <>
-    {isLoggedIn ? (
+    {session ? (
       <>
-       <Container maxWidth="sm">
-       <Box sx={{ bgcolor: 'white', height: '100vh' }}>      
+       <Layout>    
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-        🚨 Welcome to the AdSiren! 🚨
+        🚨 Welcome to AdSiren! 🚨
         </Typography>
-        <Layout>
+        <Typography varient="h6" component="h2" sx={{ mb: 2 }}>
+          Wee woo wee woo wee woo
+        </Typography>
+        
           
         </Layout>
-        </Box>
-      </Container>
       </>
     ) : (
       <>

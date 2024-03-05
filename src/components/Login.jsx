@@ -1,16 +1,16 @@
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
-import { createClient } from '@supabase/supabase-js';
 import React from 'react';
+import { supabase } from '../supabaseClient';
 
-     
+
 const Login = ({supa}) => (
     <>
     <h2>Welcome to AdVitals</h2>
     <p>Log in to to your account or sign in with Google</p>
     <Auth
     supabaseClient={supabase}
-    theme="default" // can also be "dark" or "evenDarker"
+    theme="default" // can also be "dark"
     providers={['google']}
     appearance={{ 
         theme: ThemeSupa,
