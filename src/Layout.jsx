@@ -11,10 +11,11 @@ function Layout({ children }) {
             <Container>
             <TopBar />
             <SideBar />
+            <Dashboard />
+
             <main>
                 {children} {/* This is where the content of each page will be rendered */}
             </main>
-            <Dashboard />
             </Container>
         </div>
     );

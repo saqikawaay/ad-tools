@@ -7,6 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import LineChart from './LineChart'
+import { GoogleAdsApi } from "google-ads-api";
+
+
+
 
 function createData(
   name: string,
@@ -29,7 +33,7 @@ const rows = [
 export default function Dashboard() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 500 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell>Dessert (100g serving)</TableCell>
