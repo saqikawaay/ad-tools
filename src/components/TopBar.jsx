@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { AppBar, Toolbar, Container, Typography, Button, IconButton, Menu, MenuItem } from '@mui/material';
 import { Avatar } from '@mui/material';
 import { supabase } from '../supabaseClient';
+import AccountPicker from './AccountPicker';
+
 
 async function handleLogout() {
   const { data, error } = await supabase.auth.signOut()
@@ -29,9 +31,7 @@ export default function TopBar() {
             AdSiren
           </Typography>
           <div>
-            <Button onClick={handleClick}>
-              <Avatar /> {/* Replace this with your avatar */}
-            </Button>
+           
             <Menu
               anchorEl={anchorEl}
               keepMounted
@@ -44,6 +44,16 @@ export default function TopBar() {
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
           </div>
+          <div>
+          <AccountPicker />
+
+          </div>
+          <div>
+          <Button onClick={handleClick}>
+              <Avatar /> {/* Replace this with your avatar */}
+            </Button>
+          </div>
+          
         </Toolbar>
       </AppBar>
     );

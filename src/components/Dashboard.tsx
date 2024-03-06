@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import LineChart from './LineChart'
+import Box from '@mui/material/Box';
 import { GoogleAdsApi } from "google-ads-api";
 
 
@@ -30,17 +31,21 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
+
+
+
 export default function Dashboard() {
   return (
+    <Box sx={{ display: 'flex' }}>
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500 }} size="small" aria-label="a dense table">
+      <Table sx={{ p:300 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">Clicks</TableCell>
+            <TableCell align="right">CTR</TableCell>
+            <TableCell align="right">Conv. Rate</TableCell>
+            <TableCell align="right">ROAS</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -63,5 +68,6 @@ export default function Dashboard() {
       <LineChart />
 
     </TableContainer>
+    </Box>
   );
 }
