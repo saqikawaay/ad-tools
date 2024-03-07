@@ -10,7 +10,7 @@ function Layout({ children }) {
         <div>
             <Container>
             <TopBar />
-            <SideBar />
+            
             <Dashboard />
 
             <main>

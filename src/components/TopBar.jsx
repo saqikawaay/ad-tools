@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Toolbar, Container, Typography, Button, IconButton, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Container, Typography, Button, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import { Avatar } from '@mui/material';
 import { supabase } from '../supabaseClient';
 import AccountPicker from './AccountPicker';
@@ -24,14 +24,30 @@ export default function TopBar() {
     };
 
     return (
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
-          
-          <Typography variant="h6">
+      <AppBar position="static" >
+          <Container maxWidth="xl">
+          <Toolbar disableGutters>
+          <Typography 
+          variant="h6"
+          noWrap
+          component="a"
+          href="#"
+          sx={{
+            mr: 2,
+            display: {xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
+            fontWeight: 'bold',
+            letterSpacing: '0.3rem', 
+            color: 'inherit',
+            textDecoration: 'none',
+          }}>
             AdSiren
           </Typography>
-          <div>
-           
+           <Box sx={{ flexGrow: 3, justifyContent: 'center', display: { xs: 'none', md: 'flex' } }} >
+            <AccountPicker />
+          </Box>
+
+           <Box sx={{ flexGrow: 1, display: { sx: 'none', md: 'flex' } }} >
             <Menu
               anchorEl={anchorEl}
               keepMounted
@@ -43,18 +59,15 @@ export default function TopBar() {
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
-          </div>
-          <div>
-          <AccountPicker />
+          </Box>
+          
 
-          </div>
-          <div>
           <Button onClick={handleClick}>
               <Avatar /> {/* Replace this with your avatar */}
             </Button>
-          </div>
-          
-        </Toolbar>
+          </Toolbar>
+          </Container>
+
       </AppBar>
     );
 }
