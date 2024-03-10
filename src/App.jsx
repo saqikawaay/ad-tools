@@ -39,7 +39,7 @@ function App() {
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
         🚨 Welcome to AdSiren! 🚨
         </Typography>
-        <Typography varient="h6" component="h2" sx={{ mb: 2 }}>
+        <Typography varient="h6" component="h2" sx={{ mb: 2, mt: 2}}>
           Wee woo wee woo wee woo
         </Typography>
         
