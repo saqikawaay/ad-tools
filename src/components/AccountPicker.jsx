@@ -7,7 +7,17 @@ export default function AccountPicker() {
   return (
     <Autocomplete
       id="country-select-demo"
-      sx={{ width: 300 }}
+      sx={{ 
+        width: 300, 
+        '& .MuiAutocomplete-inputRoot': {
+          color: 'primary.main', // Change the color of the input text
+        },
+        '& .MuiAutocomplete-option': {
+          '&:hover': {
+            backgroundColor: 'secondary.light', // Change the background color of the option on hover
+          },
+        },
+      }}
       options={countries}
       autoHighlight
       getOptionLabel={(option) => option.label}
@@ -31,12 +41,16 @@ export default function AccountPicker() {
             ...params.inputProps,
             autoComplete: 'new-password', // disable autocomplete and autofill
           }}
+          sx={{
+            '& .MuiInput-underline:before': {
+              borderBottomColor: 'primary.main', // Change the color of the underline
+            },
+          }}
         />
       )}
     />
   );
 }
-
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries = [
   { code: 'AD', label: 'Andorra', phone: '376' },

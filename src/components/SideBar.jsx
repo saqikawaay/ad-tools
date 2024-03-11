@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-const drawerWidth = 210;
+const drawerWidth = 180;
 
 export default function ClippedDrawer() {
   return (
